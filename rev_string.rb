@@ -3,32 +3,24 @@
 # input: string
 # output: reversed string
 
-# start from the end of the string
-# move the letter to the front of the string
-# until you reach the beginning of the string
+# until it meets the middle of the word
+#   iterate through the string
+#     by starting with switching the first letter with the last
 
 
 hello = "hello"
 timeline = "timeline"
-friends = "friends"
 
 def rev_string(string)
-  if string.length == 1
-    return string
-  end
-  reversed = string
   i = 0
   j = string.length - 1
 
-  while i < string.length/2
-    reversed[i], reversed[j] = reversed[j], reversed[i]
+  until i >= string.length/2
+    string[i], string[j] = string[j], string[i]
     i += 1
     j -= 1
   end
-  reversed
+  string
 end
 
-# p rev_string(hello)
-# rev_string(timeline)
-
-p rev_string(friends)
+p rev_string(hello)
